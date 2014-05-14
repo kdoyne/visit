@@ -1,0 +1,11 @@
+
+<% if @current_user %>
+  <table>
+  <% @visitors.each do |visitor| %>
+    <tr><td><%= visitor.first_name %></td>
+     <td><%= visitor.last_name %></td>
+     <td><%= visitor.email %></td>
+     <td><%= visitor.company %></td></tr>
+  <%end%>
+  </table>
+<%end%>

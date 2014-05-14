@@ -1,0 +1,17 @@
+<div class="new_visitor">
+<%= form_for @visitor do |f| %>
+  <%= f.label :first_name %><br>
+  <%= f.text_field :first_name %><br>
+
+  <%= f.label :last_name %><br>
+  <%= f.text_field :last_name %><br>
+
+  <%= f.label :email %><br>
+  <%= f.email_field :email %><br>
+
+  <%= f.label :company %><br>
+  <%= f.text_field :company %><br>
+
+  <%= f.submit %>
+<% end %>
+</div>
