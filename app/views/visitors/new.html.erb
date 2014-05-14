@@ -1,3 +1,11 @@
+<div id="fade">
+</div>
+
+<div id="popup">
+  Thanks!<br>
+  I'll be in touch.
+</div>
+
 <div class="new_visitor">
 <%= form_for @visitor do |f| %>
   <%= f.label :first_name %><br>
@@ -17,11 +25,17 @@
 
 </div>
 
+
 <script type="text/javascript">
   var data = {visitor: {visitor_first_name: $("#visitor_first_name").val(),
     visitor_last_name: $("visitor_last_name").val(),
     visitor_email: $("visitor_email").val(),
     visitor_company: $("visitor_company").val()}
+  }
+
+  var hide = function(){
+    $("#fade").css("display","hidden");
+    $("#popup").css("display","hidden");
   }
 
   $("form").on("submit", function(e) {
@@ -31,8 +45,10 @@
       url:"/visitors",
       data: data})
     .success(function(){
-      alert("Thanks! I'll be in touch.");
+      $("#fade").css("display", "block");
+      $("#popup").css("display", "block");
       $("form")[0].reset();
+      window.setTimeout(hide, 2000);
       })
     });
 

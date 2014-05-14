@@ -15,6 +15,7 @@
  */
 body {
   background-color: rgb(118,202,255);
+  font-family: 'Lato', sans-serif;
 }
 
 table {
@@ -62,10 +63,38 @@ input {
   margin-bottom: 10px;
 }
 
-input#submit {
-  color: red;
+input[type="submit"] {
+  background-color: white;
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  border: 0px;
 }
 
 form {
   text-align: center;
 }
+
+#popup {
+  z-index: 8;
+  position: relative;
+  top: 130px;
+  left: 35%;
+  background-color: rgba(255,255,255,.8);
+  width: 200px;
+  height: 40px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px; 
+  display: none;
+}
+
+#fade {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  z-index: 5;
+  background-color: rgba(255,255,255,.5);
+  display: none;
+}
+
