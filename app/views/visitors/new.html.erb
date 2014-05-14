@@ -34,8 +34,8 @@
   }
 
   var hide = function(){
-    $("#fade").css("display","hidden");
-    $("#popup").css("display","hidden");
+    $("#fade").fadeOut();
+    $("#popup").fadeOut();
   }
 
   $("form").on("submit", function(e) {
@@ -45,8 +45,8 @@
       url:"/visitors",
       data: data})
     .success(function(){
-      $("#fade").css("display", "block");
-      $("#popup").css("display", "block");
+      $("#fade").fadeIn();
+      $("#popup").fadeIn();
       $("form")[0].reset();
       window.setTimeout(hide, 2000);
       })
