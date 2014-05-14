@@ -27,11 +27,6 @@
 
 
 <script type="text/javascript">
-  var data = {visitor: {visitor_first_name: $("#visitor_first_name").val(),
-    visitor_last_name: $("visitor_last_name").val(),
-    visitor_email: $("visitor_email").val(),
-    visitor_company: $("visitor_company").val()}
-  }
 
   var hide = function(){
     $("#fade").fadeOut();
@@ -43,7 +38,13 @@
     $.ajax({ 
       type: "POST",
       url:"/visitors",
-      data: data})
+      data: { visitor: { 
+        first_name: $("#visitor_first_name").val(),
+        last_name: $("#visitor_last_name").val(),
+        email: $("#visitor_email").val(),
+        company: $("#visitor_company").val()}
+      }
+    })
     .success(function(){
       $("#fade").fadeIn();
       $("#popup").fadeIn();
