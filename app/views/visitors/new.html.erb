@@ -14,4 +14,27 @@
 
   <%= f.submit %>
 <% end %>
+
 </div>
+
+<script type="text/javascript">
+  var data = {visitor: {visitor_first_name: $("#visitor_first_name").val(),
+    visitor_last_name: $("visitor_last_name").val(),
+    visitor_email: $("visitor_email").val(),
+    visitor_company: $("visitor_company").val()}
+  }
+
+  $("form").on("submit", function(e) {
+    e.preventDefault();
+    $.ajax({ 
+      type: "POST",
+      url:"/visitors",
+      data: data})
+    .success(function(){
+      alert("Thanks! I'll be in touch.");
+      $("form")[0].reset();
+      })
+    });
+
+
+</script>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :visitors, only: [:index, :new, :create]
 
-  root "splash#index"
+  root "visitors#new"
 
   get "/login", to: "sessions#new"
   post "/sessions", to: "sessions#create"
